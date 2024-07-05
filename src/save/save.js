@@ -15,7 +15,7 @@ class Save {
     currently_played_characters = [];
 
     /**
-     * @type {LivingCharacter[]}
+     * @type {Map<Number, LivingCharacter>}
      */
     living;
 

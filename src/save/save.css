@@ -1,0 +1,6 @@
+.save-viewer {
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
