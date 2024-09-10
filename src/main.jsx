@@ -4,7 +4,8 @@ import 'semantic-ui-css/semantic.min.css'
 import App from './App'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import SaveViewer, { loader as saveLoader } from './save/SaveViewer'
+import SaveViewer from './save/SaveViewer'
+import saveLoader from './save/saveLoader'
 
 const router = createBrowserRouter([
   {
