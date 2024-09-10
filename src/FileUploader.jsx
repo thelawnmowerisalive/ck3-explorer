@@ -1,7 +1,6 @@
 import React, { useReducer } from "react";
 import { flushSync } from "react-dom";
 import { ParseAction, SetFileAction, SetTextAction, fileUploaderReducer } from "./fileUploaderReducer";
-import SaveViewer from "./save/SaveViewer";
 import SaveStorage from "./storage/storage";
 
 const worker = new Worker('worker.js');
@@ -82,7 +81,7 @@ const FileUploader = () => {
             {/* <ProgressBar percentage={state.percentage}></ProgressBar> */}
 
             <label htmlFor="parser"></label>
-            <progress id="parser" value={state.percentage}></progress>
+            <progress id="parser" value={state.percentage || 0}></progress>
 
             {/* {
                 state.json && <SaveViewer save={state.json}></SaveViewer>

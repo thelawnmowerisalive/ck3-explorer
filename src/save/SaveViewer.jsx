@@ -36,7 +36,7 @@ const SaveViewer = () => {
                     <FamilyTreeView rootId={save?.currently_played_characters[0]} />
                 </PinchZoomPan>
             </div>
-            {/* <CharacterView character={mainCharacter}></CharacterView> */}
+            <CharacterView character={mainCharacter}></CharacterView>
             SAVE
         </SaveContext.Provider>
     )

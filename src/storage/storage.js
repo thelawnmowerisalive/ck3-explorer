@@ -24,7 +24,6 @@ class SaveStorage {
      * @returns {Promise<Save>}
      */
     static getSave(id) {
-        // return JSON.parse(localStorage.getItem(id));
         return new Promise(async (resolve, reject) => {
             const root = await navigator.storage.getDirectory();
             const savefileHandle = await root.getFileHandle(id);
@@ -41,8 +40,6 @@ class SaveStorage {
      * @param {Save} save 
      */
     static setSave(save) {
-        // localStorage.setItem(save.playthrough_id, JSON.stringify(save));
-
         const all = SaveStorage.getAll();
         const character = Save.findMainCharacter(save);
         all[save.playthrough_id] = {

@@ -1,6 +1,6 @@
 import { create } from 'pinch-zoom-pan';
-import './pinch-zoom-pan.css';
 import { useEffect } from 'react';
+import './pinch-zoom-pan.css';
 
 const PinchZoomPan = ({ children }) => {
     useEffect(() => {
