@@ -1,21 +1,8 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import PinchZoomPan from "../pzp/PinchZoomPan";
-import SaveStorage from "../storage/storage";
-import CharacterView from "./CharacterView";
-import FamilyTreeView from "./family/FamilyTreeView";
-import { Save } from "./save";
 import SaveContext from "./SaveContext";
 
 import './save.css';
-
-export async function loader({ params }) {
-    const save = await SaveStorage.getSave(params.id);
-    const mainCharacter = Save.findCharacter(save, save.currently_played_characters[0]);
-    console.log(save);
-    console.log(mainCharacter);
-    return { save, mainCharacter };
-}
 
 const SaveViewer = () => {
     const { save, mainCharacter } = useLoaderData();
@@ -32,11 +19,11 @@ const SaveViewer = () => {
             {save?.currently_played_characters[0]}
 
             <div className="save-viewer">
-                <PinchZoomPan>
+                {/* <PinchZoomPan>
                     <FamilyTreeView rootId={save?.currently_played_characters[0]} />
-                </PinchZoomPan>
+                </PinchZoomPan> */}
             </div>
-            <CharacterView character={mainCharacter}></CharacterView>
+            {/* <CharacterView character={mainCharacter}></CharacterView> */}
             SAVE
         </SaveContext.Provider>
     )
