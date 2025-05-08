@@ -4,18 +4,25 @@ import 'semantic-ui-css/semantic.min.css'
 import App from './App'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import SaveViewer from './save/SaveViewer'
+import SaveView from './save/SaveView'
 import saveLoader from './save/saveLoader'
+import CharacterView from './save/character/CharacterView'
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <App></App>
+    path: '/ck3-explorer',
+    element: <App />,
   },
   {
-    path: '/saves/:id',
-    element: <SaveViewer></SaveViewer>,
-    loader: saveLoader
+    path: '/ck3-explorer/save/:saveid',
+    element: <SaveView />,
+    loader: saveLoader,
+    children: [
+      {
+        path: 'character/:id',
+        element: <CharacterView />
+      }
+    ]
   }
 ]);
 

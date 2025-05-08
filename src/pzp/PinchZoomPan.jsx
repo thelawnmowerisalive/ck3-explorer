@@ -2,7 +2,7 @@ import { create } from 'pinch-zoom-pan';
 import { useEffect } from 'react';
 import './pinch-zoom-pan.css';
 
-const PinchZoomPan = ({ children }) => {
+export default function PinchZoomPan({ children }) {
     useEffect(() => {
         create({
             element: document.getElementById('pzp'),
@@ -22,5 +22,3 @@ const PinchZoomPan = ({ children }) => {
         </div>
     )
 }
-
-export default PinchZoomPan;

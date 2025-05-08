@@ -1,7 +1,7 @@
-import ReactFamilyTree from 'react-family-tree';
-import FamilyNode from './FamilyNode';
 import { useContext } from 'react';
+import ReactFamilyTree from 'react-family-tree';
 import SaveContext from '../SaveContext';
+import FamilyNode from './FamilyNode';
 
 class Node {
     parents = [];
@@ -71,8 +71,7 @@ const mend = (map) => {
 }
 
 const FamilyTreeView = ({ rootId }) => {
-    const saveContext = useContext(SaveContext);
-    const save = saveContext.save;
+    const { save } = useContext(SaveContext);
 
     const nodes = [];
     const map = {};

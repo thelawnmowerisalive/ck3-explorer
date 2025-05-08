@@ -1,5 +1,16 @@
-.save-viewer {
-    background: #eee;
+.save-view {
     display: flex;
     flex-direction: column;
+
+    header {
+        display: flex;
+        padding: .5em;
+        justify-content: space-between;
+        align-items: baseline;
+        background: #eee;
+    }
+
+    main {
+        display: flex;
+    }
 }

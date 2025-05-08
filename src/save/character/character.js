@@ -23,10 +23,10 @@ class Character {
 
 class DeadData {
     date = '';
-    domain;
+    reason = '';
 }
 
-class DeadUnprunableCharacter extends Character {
+class DeadCharacter extends Character {
     dead_data = new DeadData();
 }
 
@@ -43,6 +43,7 @@ class AliveData {
     piety = new PersonalCurrency();
     prestige = new PersonalCurrency();
     schemes = [];
+    secrets = [];
     perk = [];
     memories = [];
 }
@@ -51,4 +52,4 @@ class LivingCharacter extends Character {
     alive_data = new AliveData();
 }
 
-export { Character, LivingCharacter, DeadUnprunableCharacter };
+export { Character, LivingCharacter, DeadCharacter };

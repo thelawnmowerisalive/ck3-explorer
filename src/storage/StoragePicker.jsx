@@ -1,6 +1,7 @@
 import React from "react";
 import { Icon, Segment, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow } from "semantic-ui-react";
 import SaveStorage from "./storage";
+import { Link } from "react-router-dom";
 
 const StoragePicker = () => {
     const saves = SaveStorage.getAll();
@@ -14,7 +15,9 @@ const StoragePicker = () => {
                 <TableCell>{save.character}</TableCell>
                 <TableCell>{save.date}</TableCell>
                 <TableCell>
-                    <a href={'saves/' + id}><Icon name="search" /></a>
+                    <Link to={'save/' + id}>
+                        <Icon name="search" />
+                    </Link>
                 </TableCell>
             </TableRow>
         ));

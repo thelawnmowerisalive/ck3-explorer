@@ -1,4 +1,4 @@
-import { Character, LivingCharacter } from "./character";
+import { DeadCharacter, LivingCharacter } from "./character/character";
 
 class MetaData {
     version = -1;
@@ -15,18 +15,41 @@ class Save {
     currently_played_characters = [];
 
     /**
-     * @type {Map<Number, LivingCharacter>}
+     * @type {Map<string, LivingCharacter>}
      */
     living;
+
+    /**
+     * @type {Map<string, DeadCharacter}
+     */
+    dead_unprunable;
+
+    /**
+     * @param {Save} save 
+     * @param {string} id 
+     * @returns {LivingCharacter}
+     */
+    static findLivingCharacter = (save, id) => {
+        return save.living[id];
+    }
+
+    /**
+     * @param {Save} save 
+     * @param {string} id 
+     * @returns {DeadCharacter}
+     */
+    static findDeadCharacter = (save, id) => {
+        return save.dead_unprunable[id] || save.characters.dead_prunable[id];
+    }
 
     /**
      * 
      * @param {Save} save 
      * @param {string} id 
-     * @returns {Character}
+     * @returns {LivingCharacter | DeadCharacter}
      */
     static findCharacter = (save, id) => {
-        return save.living[id];
+        return Save.findLivingCharacter(save, id) || Save.findDeadCharacter(save, id);
     }
 
     static findMainCharacter = (save) => {
